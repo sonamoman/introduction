@@ -122,7 +122,6 @@
         flex-direction: column;
         justify-content: center;
         padding: 8rem 3rem 4rem;
-        max-width: 900px;
       }
 
       .eyebrow {
@@ -264,21 +263,9 @@
         padding: 5rem 3rem;
         max-width: 1100px;
         margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 2fr;
         gap: 4rem;
         align-items: start;
-      }
-
-      .about-strip h2 {
-        font-family: "DM Serif Display", serif;
-        font-size: 2rem;
-        line-height: 1.2;
-      }
-
-      .about-strip h2 em {
-        font-style: italic;
-        color: var(--accent);
+        text-align: center;
       }
 
       .about-strip p {
@@ -381,7 +368,6 @@
     </div>
 
     <div class="about-strip">
-      <h2>Built by <em>one</em> person.</h2>
       <p>
         Senior frontend engineer with <span id="exp"></span> years of
         experience, based in Athens, Greece. I build web applications
@@ -391,7 +377,7 @@
     </div>
 
     <footer>
-      <p>&copy; 2026 Emmanouil Tzelepis</p>
+      <p>&copy; <span id="year"></span> Emmanouil Tzelepis</p>
       <a href="mailto:tzelepis.man@gmail.com">tzelepis.man@gmail.com</a>
     </footer>
 
@@ -405,6 +391,7 @@
       const now = new Date();
       const years = Math.floor((now - start) / (1000 * 60 * 60 * 24 * 365.25));
       document.getElementById("exp").textContent = years + "+";
+      document.getElementById("year").textContent = now.getFullYear();
     </script>
   </body>
 </html>
